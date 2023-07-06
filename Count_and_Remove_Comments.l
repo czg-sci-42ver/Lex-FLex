@@ -19,8 +19,8 @@ comments from a text file "text.txt"
 "//".* {S++;}
 %%
 
-int main(){
-	yyin = fopen("text.txt", "r");
+int main(int argc,char const *argv[]){
+	yyin = fopen(argv[1], "r");
 	yyout = fopen("New.txt", "w");
 	yylex();
 	printf("\n\tSingle Line Comment = %d", S);
